@@ -139,7 +139,33 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
         public void RegisterHandler<TService>(Func<TService> handler) where TService : class
         {
            _container.RegisterHandler(typeof(TService), null, (container, args) => handler()); 
-        }        
+        }
+
+        /// <summary>
+        /// Registers the collection.
+        /// </summary>
+        /// <typeparam name="TService">The type of the service.</typeparam>
+        /// <param name="dependencyTypes">The dependency types.</param>        
+        public void RegisterCollection<TService>(IEnumerable<Type> dependencyTypes) where TService : class
+        {
+            foreach (var type in dependencyTypes)
+            {
+                _container.RegisterSingleton(typeof(TService), null, type);
+            }
+        }
+
+        /// <summary>
+        /// Registers the collection.
+        /// </summary>
+        /// <param name="dependencyType">Type of the dependency.</param>
+        /// <param name="dependencyTypes">The dependency types.</param>        
+        public void RegisterCollection(Type dependencyType, IEnumerable<Type> dependencyTypes)
+        {
+            foreach (var type in dependencyTypes)
+            {
+                _container.RegisterSingleton(dependencyType, null, type);
+            }
+        }
 
         /// <summary>
         /// Determines whether the specified service has handler.

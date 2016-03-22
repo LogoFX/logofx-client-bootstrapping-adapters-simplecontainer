@@ -1,4 +1,6 @@
-﻿using LogoFX.Client.Bootstrapping.Adapters.SimpleContainer;
+﻿using System.Collections.Generic;
+using System.Linq;
+using LogoFX.Client.Bootstrapping.Adapters.SimpleContainer;
 using LogoFX.Practices.IoC;
 using NUnit.Framework;
 
@@ -65,5 +67,39 @@ namespace LogoFX.Client.Bootstrapping.Tests
 
             Assert.AreNotSame(dependencyTwo, dependencyOne);
         }
+    }
+
+    [TestFixture]
+    class CollectionRegistrationTests
+    {
+        [Test]
+        public void MultipleImplementationAreRegistered_ResolvedCollectionContainsAllImplementations()
+        {
+            var adapter = new ExtendedSimpleContainerAdapter();
+            adapter.RegisterCollection<ICustomDependency>(new[] { typeof(TestDependencyA), typeof(TestDependencyB) });
+
+            var collection = adapter.Resolve<IEnumerable<ICustomDependency>>().ToArray();
+
+            var firstItem = collection.First();
+            var secondItem = collection.Last();
+
+            Assert.IsInstanceOf(typeof(TestDependencyA), firstItem);
+            Assert.IsInstanceOf(typeof(TestDependencyB), secondItem);
+        }
+    }
+
+    interface ICustomDependency
+    {
+
+    }
+
+    class TestDependencyA : ICustomDependency
+    {
+
+    }
+
+    class TestDependencyB : ICustomDependency
+    {
+
     }
 }
