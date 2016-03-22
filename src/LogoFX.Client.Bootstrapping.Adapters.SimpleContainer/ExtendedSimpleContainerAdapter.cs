@@ -9,7 +9,7 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
     /// <summary>
     /// Represents implementation of IoC container and bootstrapper adapter using Extended Simple Container
     /// </summary>
-    public class ExtendedSimpleContainerAdapter : IIocContainer, IBootstrapperAdapter
+    public class ExtendedSimpleContainerAdapter : IIocContainer, IIocContainerScoped, IBootstrapperAdapter
     {
         private readonly ExtendedSimpleContainer _container;
 
@@ -251,6 +251,38 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
         public void Dispose()
         {
             ((IDisposable) _container).Dispose();
+        }
+
+        /// <summary>
+        /// Registers the dependency per lifetime of another object.
+        /// </summary>
+        /// <param name="lifetimeProvider">The lifetime scope.</param>
+        /// <param name="service">The service.</param>
+        /// <param name="implementation">The implementation.</param>
+        public void RegisterScoped(Func<object> lifetimeProvider, Type service, Type implementation)
+        {
+            _container.RegisterPerLifetime(lifetimeProvider, service, null, implementation);
+        }
+
+        /// <summary>
+        /// Registers the dependency per lifetime of another object.
+        /// </summary>
+        /// <typeparam name="TService">The type of the service.</typeparam>
+        /// <typeparam name="TImplementation">The type of the implementation.</typeparam>
+        /// <param name="lifetimeProvider">The lifetime provider.</param>
+        public void RegisterScoped<TService, TImplementation>(Func<object> lifetimeProvider)
+        {
+            _container.RegisterPerLifetime(lifetimeProvider, typeof(TService), null, typeof(TImplementation));
+        }
+
+        /// <summary>
+        /// Registers the dependency per lifetime of another object.
+        /// </summary>
+        /// <typeparam name="TService">The type of the service.</typeparam>
+        /// <param name="lifetimeProvider">The lifetime provider.</param>
+        public void RegisterScoped<TService>(Func<object> lifetimeProvider)
+        {
+            _container.RegisterPerLifetime(lifetimeProvider, typeof(TService), null, typeof(TService));
         }
     }
 }
