@@ -8,7 +8,8 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
     /// <summary>
     /// Represents implementation of IoC container and bootstrapper adapter using Simple Container
     /// </summary>
-    public class SimpleContainerAdapter : IIocContainer, IBootstrapperAdapter
+    public class SimpleContainerAdapter : IIocContainer, IIocContainerAdapter<Practices.IoC.SimpleContainer>,
+        IIocContainerScoped, IBootstrapperAdapter
     {
         private readonly Practices.IoC.SimpleContainer _container;
 
@@ -143,6 +144,16 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
         }
 
         /// <summary>
+        /// Registers the collection of the dependencies.
+        /// </summary>
+        /// <typeparam name="TService">The type of the service.</typeparam>
+        /// <param name="dependencies">The dependencies.</param>
+        public void RegisterCollection<TService>(IEnumerable<TService> dependencies) where TService : class
+        {
+            _container.RegisterInstance(typeof(IEnumerable<TService>),null, dependencies);
+        }
+
+        /// <summary>
         /// Registers the collection.
         /// </summary>
         /// <param name="dependencyType">Type of the dependency.</param>
@@ -154,6 +165,51 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
             {
                 _container.RegisterSingleton(dependencyType, null, type);
             }
+        }
+
+        /// <summary>
+        /// Registers the collection of the dependencies.
+        /// </summary>
+        /// <param name="dependencyType">The dependency type.</param>
+        /// <param name="dependencies">The dependencies.</param>
+        public void RegisterCollection(Type dependencyType, IEnumerable<object> dependencies)
+        {
+            foreach (var dependency in dependencies)
+            {
+                _container.RegisterInstance(dependencyType, null, dependency);
+            }
+        }
+
+        /// <summary>
+        /// Registers the dependency per lifetime of another object.
+        /// </summary>
+        /// <param name="lifetimeProvider">The lifetime scope.</param>
+        /// <param name="service">The service.</param>
+        /// <param name="implementation">The implementation.</param>
+        public void RegisterScoped(Func<object> lifetimeProvider, Type service, Type implementation)
+        {
+            _container.RegisterPerLifetime(lifetimeProvider, service, null, implementation);
+        }
+
+        /// <summary>
+        /// Registers the dependency per lifetime of another object.
+        /// </summary>
+        /// <typeparam name="TService">The type of the service.</typeparam>
+        /// <typeparam name="TImplementation">The type of the implementation.</typeparam>
+        /// <param name="lifetimeProvider">The lifetime provider.</param>
+        public void RegisterScoped<TService, TImplementation>(Func<object> lifetimeProvider)
+        {
+            _container.RegisterPerLifetime(lifetimeProvider, typeof(TService), null, typeof(TImplementation));
+        }
+
+        /// <summary>
+        /// Registers the dependency per lifetime of another object.
+        /// </summary>
+        /// <typeparam name="TService">The type of the service.</typeparam>
+        /// <param name="lifetimeProvider">The lifetime provider.</param>
+        public void RegisterScoped<TService>(Func<object> lifetimeProvider)
+        {
+            _container.RegisterPerLifetime(lifetimeProvider, typeof(TService), null, typeof(TService));
         }
 
         /// <summary>

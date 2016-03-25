@@ -9,7 +9,8 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
     /// <summary>
     /// Represents implementation of IoC container and bootstrapper adapter using Extended Simple Container
     /// </summary>
-    public class ExtendedSimpleContainerAdapter : IIocContainer, IIocContainerScoped, IBootstrapperAdapter
+    public class ExtendedSimpleContainerAdapter : IIocContainer, IIocContainerAdapter<ExtendedSimpleContainer>,
+        IIocContainerScoped, IBootstrapperAdapter
     {
         private readonly ExtendedSimpleContainer _container;
 
@@ -155,15 +156,39 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
         }
 
         /// <summary>
+        /// Registers the collection of the dependencies.
+        /// </summary>
+        /// <typeparam name="TService">The type of the service.</typeparam>
+        /// <param name="dependencies">The dependencies.</param>
+        public void RegisterCollection<TService>(IEnumerable<TService> dependencies) where TService : class
+        {
+            _container.RegisterInstance(typeof(IEnumerable<TService>), null, dependencies);
+        }
+
+        /// <summary>
         /// Registers the collection.
         /// </summary>
         /// <param name="dependencyType">Type of the dependency.</param>
-        /// <param name="dependencyTypes">The dependency types.</param>        
+        /// <param name="dependencyTypes">The dependency types.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
         public void RegisterCollection(Type dependencyType, IEnumerable<Type> dependencyTypes)
         {
             foreach (var type in dependencyTypes)
             {
                 _container.RegisterSingleton(dependencyType, null, type);
+            }
+        }
+
+        /// <summary>
+        /// Registers the collection of the dependencies.
+        /// </summary>
+        /// <param name="dependencyType">The dependency type.</param>
+        /// <param name="dependencies">The dependencies.</param>
+        public void RegisterCollection(Type dependencyType, IEnumerable<object> dependencies)
+        {
+            foreach (var dependency in dependencies)
+            {
+                _container.RegisterInstance(dependencyType, null, dependency);
             }
         }
 

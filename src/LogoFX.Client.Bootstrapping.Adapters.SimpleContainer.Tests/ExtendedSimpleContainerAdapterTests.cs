@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace LogoFX.Client.Bootstrapping.Tests
 {
     [TestFixture]
-    class ExtendedSimpleIocContainerTests
+    class ExtendedSimpleContainerAdapterTests
     {
         [Test]
         public void Given_WhenDependencyIsRegisteredPerLifetimeAndDependencyIsResolved_ThenResolvedDependencyIsNotNull()
@@ -73,7 +73,7 @@ namespace LogoFX.Client.Bootstrapping.Tests
     class CollectionRegistrationTests
     {
         [Test]
-        public void MultipleImplementationAreRegistered_ResolvedCollectionContainsAllImplementations()
+        public void MultipleImplementationAreRegisteredByType_ResolvedCollectionContainsAllImplementations()
         {
             var adapter = new ExtendedSimpleContainerAdapter();
             adapter.RegisterCollection<ICustomDependency>(new[] { typeof(TestDependencyA), typeof(TestDependencyB) });
@@ -85,6 +85,23 @@ namespace LogoFX.Client.Bootstrapping.Tests
 
             Assert.IsInstanceOf(typeof(TestDependencyA), firstItem);
             Assert.IsInstanceOf(typeof(TestDependencyB), secondItem);
+        }
+
+        [Test]
+        public void MultipleImplementationAreRegisteredByInstance_ResolvedCollectionContainsAllImplementations()
+        {
+            var adapter = new ExtendedSimpleContainerAdapter();
+            var instanceA = new TestDependencyA();
+            var instanceB = new TestDependencyB();
+            adapter.RegisterCollection(new ICustomDependency[] { instanceA, instanceB });
+
+            var collection = adapter.Resolve<IEnumerable<ICustomDependency>>().ToArray();
+
+            var firstItem = collection.First();
+            var secondItem = collection.Last();
+
+            Assert.AreSame(instanceA, firstItem);
+            Assert.AreSame(instanceB, secondItem);
         }
     }
 
