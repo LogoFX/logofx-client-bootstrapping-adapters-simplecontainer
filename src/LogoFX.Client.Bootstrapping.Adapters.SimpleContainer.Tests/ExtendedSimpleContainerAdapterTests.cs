@@ -88,6 +88,21 @@ namespace LogoFX.Client.Bootstrapping.Tests
         }
 
         [Test]
+        public void MultipleImplementationAreRegisteredByTypeAsParameter_ResolvedCollectionContainsAllImplementations()
+        {
+            var adapter = new ExtendedSimpleContainerAdapter();
+            adapter.RegisterCollection(typeof(ICustomDependency), new[] { typeof(TestDependencyA), typeof(TestDependencyB) });
+
+            var collection = adapter.Resolve<IEnumerable<ICustomDependency>>().ToArray();
+
+            var firstItem = collection.First();
+            var secondItem = collection.Last();
+
+            Assert.IsInstanceOf(typeof(TestDependencyA), firstItem);
+            Assert.IsInstanceOf(typeof(TestDependencyB), secondItem);
+        }
+
+        [Test]
         public void MultipleImplementationAreRegisteredByInstance_ResolvedCollectionContainsAllImplementations()
         {
             var adapter = new ExtendedSimpleContainerAdapter();
