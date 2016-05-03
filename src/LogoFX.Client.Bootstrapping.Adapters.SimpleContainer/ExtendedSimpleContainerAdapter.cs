@@ -7,7 +7,7 @@ using Solid.Practices.IoC;
 namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
 {
     /// <summary>
-    /// Represents implementation of IoC container and bootstrapper adapter using Extended Simple Container
+    /// Represents implementation of ioc container and bootstrapper adapter using Extended Simple Container.
     /// </summary>
     public class ExtendedSimpleContainerAdapter : IIocContainer, IIocContainerAdapter<ExtendedSimpleContainer>,
         IIocContainerScoped, IBootstrapperAdapter
