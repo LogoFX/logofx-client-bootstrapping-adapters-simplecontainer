@@ -7,5 +7,15 @@
 
     class TestDependency : ITestDependency
     {
-    }    
+    }
+
+    class TestDependencyA : ITestDependency
+    {
+
+    }
+
+    class TestDependencyB : ITestDependency
+    {
+
+    }
 }

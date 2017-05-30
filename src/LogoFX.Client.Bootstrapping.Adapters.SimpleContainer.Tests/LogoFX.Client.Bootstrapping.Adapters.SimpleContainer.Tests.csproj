@@ -55,8 +55,8 @@
       <HintPath>..\packages\LogoFX.Practices.IoC.1.0.9\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\LogoFX.Practices.IoC.Modularity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Solid.Practices.IoC, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Solid.Practices.IoC.1.1.1\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\Solid.Practices.IoC.dll</HintPath>
+    <Reference Include="Solid.Practices.IoC, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Solid.Practices.IoC.1.1.2-rc1\lib\portable-net45+wpa8+win8+MonoAndroid+MonoTouch+uap10.0\Solid.Practices.IoC.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Solid.Practices.Middleware, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -92,10 +92,12 @@
     <Compile Include="CollectionRegistrationTests.cs" />
     <Compile Include="ExtendedSimpleContainerAdapterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingletonRegistrationTests.cs" />
     <Compile Include="TestDependency.cs" />
     <Compile Include="TestLifetimeScopeProvider.cs" />
     <Compile Include="TestObject.cs" />
     <Compile Include="TestViewModel.cs" />
+    <Compile Include="TransientRegistrationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

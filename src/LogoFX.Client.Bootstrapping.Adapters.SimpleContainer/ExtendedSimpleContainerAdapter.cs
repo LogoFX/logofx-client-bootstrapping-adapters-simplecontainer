@@ -335,5 +335,78 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
         {
             _container.RegisterPerLifetime(lifetimeProvider, typeof(TService), null, typeof(TService));
         }
+
+        /// <summary>
+        /// Registers dependency in a transient lifetime style.
+        /// </summary>
+        /// <typeparam name="TService">Type of dependency declaration.</typeparam>
+        /// <typeparam name="TImplementation">Type of dependency implementation.</typeparam>
+        /// <param name="dependencyCreator">Dependency creator delegate.</param>
+        public void RegisterTransient<TService, TImplementation>(Func<TImplementation> dependencyCreator) where TImplementation : class, TService
+        {
+            _container.RegisterHandler(typeof(TService), null, (container, args) => dependencyCreator());
+        }
+
+        /// <summary>
+        /// Registers dependency in a transient lifetime style.
+        /// </summary>
+        /// <typeparam name="TService">Type of dependency.</typeparam>
+        /// <param name="dependencyCreator">Dependency creator delegate.</param>
+        public void RegisterTransient<TService>(Func<TService> dependencyCreator) where TService : class
+        {
+            _container.RegisterHandler(typeof(TService), null, (container, args) => dependencyCreator());
+        }
+
+        /// <summary>
+        /// Registers dependency in a transient lifetime style.
+        /// </summary>
+        /// <param name="serviceType">Type of dependency declaration.</param>
+        /// <param name="implementationType">Type of dependency implementation.</param>
+        /// <param name="dependencyCreator">Dependency creator delegate.</param>
+        public void RegisterTransient(Type serviceType, Type implementationType, Func<object> dependencyCreator)
+        {
+            _container.RegisterHandler(serviceType, null, (container, args) => dependencyCreator());
+        }
+
+        /// <summary>
+        /// Registers dependency as a singleton.
+        /// </summary>
+        /// <typeparam name="TService">Type of dependency.</typeparam>
+        public void RegisterSingleton<TService>() where TService : class
+        {
+            _container.RegisterSingleton(typeof(TService), null, typeof(TService));
+        }
+
+        /// <summary>
+        /// Registers dependency as a singleton.
+        /// </summary>
+        /// <typeparam name="TService">Type of dependency.</typeparam>
+        /// <param name="dependencyCreator">Dependency creator delegate.</param>
+        public void RegisterSingleton<TService>(Func<TService> dependencyCreator) where TService : class
+        {
+            _container.RegisterHandler(typeof(TService), null, (container, args) => dependencyCreator());
+        }
+
+        /// <summary>
+        /// Registers dependency as a singleton.
+        /// </summary>
+        /// <typeparam name="TService">Type of dependency declaration.</typeparam>
+        /// <typeparam name="TImplementation">Type of dependency implementation.</typeparam>
+        /// <param name="dependencyCreator">Dependency creator delegate.</param>
+        public void RegisterSingleton<TService, TImplementation>(Func<TImplementation> dependencyCreator) where TImplementation : class, TService
+        {
+            _container.RegisterHandler(typeof(TService), null, (container, args) => dependencyCreator());
+        }
+
+        /// <summary>
+        /// Registers dependency as a singleton.
+        /// </summary>
+        /// <param name="serviceType">Type of dependency declaration.</param>
+        /// <param name="implementationType">Type of dependency implementation.</param>
+        /// <param name="dependencyCreator">Dependency creator delegate.</param>
+        public void RegisterSingleton(Type serviceType, Type implementationType, Func<object> dependencyCreator)
+        {
+            _container.RegisterHandler(serviceType, null, (container, args) => dependencyCreator());
+        }
     }
 }

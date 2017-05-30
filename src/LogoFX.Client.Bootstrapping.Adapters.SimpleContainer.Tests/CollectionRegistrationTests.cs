@@ -12,9 +12,9 @@ namespace LogoFX.Client.Bootstrapping.Tests
         public void MultipleImplementationAreRegisteredByType_ResolvedCollectionContainsAllImplementations()
         {
             var adapter = new ExtendedSimpleContainerAdapter();
-            adapter.RegisterCollection<ICustomDependency>(new[] { typeof(TestDependencyA), typeof(TestDependencyB) });
+            adapter.RegisterCollection<ITestDependency>(new[] { typeof(TestDependencyA), typeof(TestDependencyB) });
 
-            var collection = adapter.Resolve<IEnumerable<ICustomDependency>>().ToArray();
+            var collection = adapter.Resolve<IEnumerable<ITestDependency>>().ToArray();
 
             var firstItem = collection.First();
             var secondItem = collection.Last();
@@ -27,9 +27,9 @@ namespace LogoFX.Client.Bootstrapping.Tests
         public void MultipleImplementationAreRegisteredByTypeAsParameter_ResolvedCollectionContainsAllImplementations()
         {
             var adapter = new ExtendedSimpleContainerAdapter();
-            adapter.RegisterCollection(typeof(ICustomDependency), new[] { typeof(TestDependencyA), typeof(TestDependencyB) });
+            adapter.RegisterCollection(typeof(ITestDependency), new[] { typeof(TestDependencyA), typeof(TestDependencyB) });
 
-            var collection = adapter.Resolve<IEnumerable<ICustomDependency>>().ToArray();
+            var collection = adapter.Resolve<IEnumerable<ITestDependency>>().ToArray();
 
             var firstItem = collection.First();
             var secondItem = collection.Last();
@@ -44,9 +44,9 @@ namespace LogoFX.Client.Bootstrapping.Tests
             var adapter = new ExtendedSimpleContainerAdapter();
             var instanceA = new TestDependencyA();
             var instanceB = new TestDependencyB();
-            adapter.RegisterCollection(new ICustomDependency[] { instanceA, instanceB });
+            adapter.RegisterCollection(new ITestDependency[] { instanceA, instanceB });
 
-            var collection = adapter.Resolve<IEnumerable<ICustomDependency>>().ToArray();
+            var collection = adapter.Resolve<IEnumerable<ITestDependency>>().ToArray();
 
             var firstItem = collection.First();
             var secondItem = collection.Last();

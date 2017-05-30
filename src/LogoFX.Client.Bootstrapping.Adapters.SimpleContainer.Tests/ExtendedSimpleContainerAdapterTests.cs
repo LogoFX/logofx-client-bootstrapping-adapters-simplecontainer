@@ -63,22 +63,7 @@ namespace LogoFX.Client.Bootstrapping.Tests
             var dependencyOne = container.Resolve<ITestDependency>();
             var dependencyTwo = container.Resolve<ITestDependency>();
 
-            dependencyOne.Should().NotBeSameAs(dependencyOne);            
+            dependencyOne.Should().NotBeSameAs(dependencyTwo);            
         }
-    }
-
-    interface ICustomDependency
-    {
-
-    }
-
-    class TestDependencyA : ICustomDependency
-    {
-
-    }
-
-    class TestDependencyB : ICustomDependency
-    {
-
-    }
+    }    
 }
