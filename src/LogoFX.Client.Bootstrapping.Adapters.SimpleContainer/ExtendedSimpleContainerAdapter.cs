@@ -384,7 +384,7 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
         /// <param name="dependencyCreator">Dependency creator delegate.</param>
         public void RegisterSingleton<TService>(Func<TService> dependencyCreator) where TService : class
         {
-            _container.RegisterHandler(typeof(TService), null, (container, args) => dependencyCreator());
+            _container.RegisterSingleton(typeof(TService), null, (container, args) => dependencyCreator());
         }
 
         /// <summary>
@@ -395,7 +395,7 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
         /// <param name="dependencyCreator">Dependency creator delegate.</param>
         public void RegisterSingleton<TService, TImplementation>(Func<TImplementation> dependencyCreator) where TImplementation : class, TService
         {
-            _container.RegisterHandler(typeof(TService), null, (container, args) => dependencyCreator());
+            _container.RegisterSingleton(typeof(TService), null, (container, args) => dependencyCreator());
         }
 
         /// <summary>
@@ -406,7 +406,7 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
         /// <param name="dependencyCreator">Dependency creator delegate.</param>
         public void RegisterSingleton(Type serviceType, Type implementationType, Func<object> dependencyCreator)
         {
-            _container.RegisterHandler(serviceType, null, (container, args) => dependencyCreator());
+            _container.RegisterSingleton(serviceType, null, (container, args) => dependencyCreator());
         }
     }
 }
