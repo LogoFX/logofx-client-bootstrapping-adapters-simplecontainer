@@ -101,8 +101,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.csproj">
-      <Project>{C84E0089-7BC7-4F16-8A10-B09F7CC1DB83}</Project>
+    <ProjectReference Include="..\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\portable\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.csproj">
+      <Project>{c84e0089-7bc7-4f16-8a10-b09f7cc1db83}</Project>
       <Name>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer</Name>
     </ProjectReference>
   </ItemGroup>
