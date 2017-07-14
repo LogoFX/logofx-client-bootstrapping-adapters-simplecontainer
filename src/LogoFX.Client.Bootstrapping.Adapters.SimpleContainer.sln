@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Bootstrapping
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer", "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\portable\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.csproj", "{C84E0089-7BC7-4F16-8A10-B09F7CC1DB83}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NETStandard13", "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\netstandard1.3\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NETStandard13.csproj", "{CF410BDE-06F5-4A5A-A77C-588D4E92BA43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NET45", "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\net45\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NET45.csproj", "{E285EEEB-0475-4710-A425-DD58907B4149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Bootstrapping.SimpleContainer.Tests.NETStandard13", "LogoFX.Client.Bootstrapping..SimpleContainer.Tests.NETStandard13\LogoFX.Client.Bootstrapping.SimpleContainer.Tests.NETStandard13.csproj", "{9DFEA11C-FA0A-4212-96D7-01FAF2727648}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{C84E0089-7BC7-4F16-8A10-B09F7CC1DB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C84E0089-7BC7-4F16-8A10-B09F7CC1DB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C84E0089-7BC7-4F16-8A10-B09F7CC1DB83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF410BDE-06F5-4A5A-A77C-588D4E92BA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF410BDE-06F5-4A5A-A77C-588D4E92BA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF410BDE-06F5-4A5A-A77C-588D4E92BA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF410BDE-06F5-4A5A-A77C-588D4E92BA43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E285EEEB-0475-4710-A425-DD58907B4149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E285EEEB-0475-4710-A425-DD58907B4149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E285EEEB-0475-4710-A425-DD58907B4149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E285EEEB-0475-4710-A425-DD58907B4149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DFEA11C-FA0A-4212-96D7-01FAF2727648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DFEA11C-FA0A-4212-96D7-01FAF2727648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DFEA11C-FA0A-4212-96D7-01FAF2727648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DFEA11C-FA0A-4212-96D7-01FAF2727648}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
