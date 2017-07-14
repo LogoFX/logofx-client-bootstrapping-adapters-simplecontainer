@@ -4,6 +4,9 @@
     <TargetFramework>netstandard1.3</TargetFramework>
     <AssemblyName>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer</AssemblyName>
     <RootNamespace>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer</RootNamespace>
+    <Version>1.2.0</Version>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <FileVersion>1.2.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
