@@ -101,9 +101,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\portable\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.csproj">
-      <Project>{c84e0089-7bc7-4f16-8a10-b09f7cc1db83}</Project>
-      <Name>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer</Name>
+    <ProjectReference Include="..\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\net45\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NET45.csproj">
+      <Project>{e285eeeb-0475-4710-a425-dd58907b4149}</Project>
+      <Name>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NET45</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

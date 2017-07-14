@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.Tests", "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.Tests\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.Tests.csproj", "{ED0F4E1F-CE9E-49A0-937F-B1D81F24774F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer", "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\portable\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.csproj", "{C84E0089-7BC7-4F16-8A10-B09F7CC1DB83}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NETStandard13", "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\netstandard1.3\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NETStandard13.csproj", "{CF410BDE-06F5-4A5A-A77C-588D4E92BA43}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NET45", "LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\net45\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NET45.csproj", "{E285EEEB-0475-4710-A425-DD58907B4149}"
@@ -23,10 +21,6 @@ Global
 		{ED0F4E1F-CE9E-49A0-937F-B1D81F24774F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED0F4E1F-CE9E-49A0-937F-B1D81F24774F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED0F4E1F-CE9E-49A0-937F-B1D81F24774F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C84E0089-7BC7-4F16-8A10-B09F7CC1DB83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C84E0089-7BC7-4F16-8A10-B09F7CC1DB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C84E0089-7BC7-4F16-8A10-B09F7CC1DB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C84E0089-7BC7-4F16-8A10-B09F7CC1DB83}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF410BDE-06F5-4A5A-A77C-588D4E92BA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CF410BDE-06F5-4A5A-A77C-588D4E92BA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF410BDE-06F5-4A5A-A77C-588D4E92BA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
