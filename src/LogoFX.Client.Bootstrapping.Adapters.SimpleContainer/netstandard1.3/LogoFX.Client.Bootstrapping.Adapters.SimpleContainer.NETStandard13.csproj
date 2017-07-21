@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="LogoFX.Client.Bootstrapping.Adapters.Contracts" Version="1.1.0-rc1" />
-    <PackageReference Include="LogoFX.Practices.IoC" Version="1.0.11-rc1" />
+    <PackageReference Include="LogoFX.Practices.IoC" Version="1.1.0-rc1" />
   </ItemGroup>
 
 </Project>
