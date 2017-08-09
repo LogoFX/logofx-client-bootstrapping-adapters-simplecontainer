@@ -10,7 +10,7 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
     /// Represents implementation of ioc container and bootstrapper adapter using Extended Simple Container.
     /// </summary>
     public class ExtendedSimpleContainerAdapter : IIocContainer, IIocContainerAdapter<ExtendedSimpleContainer>,
-        IIocContainerScoped, IBootstrapperAdapter
+        IDependencyRegistratorScoped, IBootstrapperAdapter
     {
         private readonly ExtendedSimpleContainer _container;
 
