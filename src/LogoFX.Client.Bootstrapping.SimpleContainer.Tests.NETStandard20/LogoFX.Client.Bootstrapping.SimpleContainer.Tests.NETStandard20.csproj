@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9DFEA11C-FA0A-4212-96D7-01FAF2727648}</ProjectGuid>
+    <ProjectGuid>{4D11252B-100C-48CB-B65B-A7E62859E36B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LogoFX.Client.Bootstrapping.SimpleContainer.Tests.NET45</RootNamespace>
-    <AssemblyName>LogoFX.Client.Bootstrapping._.SimpleContainer.Tests.NET45</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>LogoFX.Client.Bootstrapping.SimpleContainer.Tests.NETStandard20</RootNamespace>
+    <AssemblyName>LogoFX.Client.Bootstrapping.SimpleContainer.Tests.NETStandard20</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -67,9 +67,6 @@
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="xunit.assert, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\packages\xunit.assert.2.1.0\lib\dotnet\xunit.assert.dll</HintPath>
-    </Reference>
     <Reference Include="xunit.core, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\packages\xunit.extensibility.core.2.1.0\lib\dotnet\xunit.core.dll</HintPath>
     </Reference>
@@ -105,13 +102,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\netstandard1.3\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NETStandard13.csproj">
-      <Project>{cf410bde-06f5-4a5a-a77c-588d4e92ba43}</Project>
-      <Name>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NETStandard13</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\netstandard2.0\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NETStandard20.csproj">
+      <Project>{ab85b185-53ea-4b9e-b012-f310db99304b}</Project>
+      <Name>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.NETStandard20</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
