@@ -84,10 +84,13 @@
       <Version>1.1.1-rc3</Version>
     </PackageReference>
     <PackageReference Include="LogoFX.Practices.IoC">
-      <Version>1.1.1-rc2</Version>
+      <Version>1.1.1-rc3</Version>
+    </PackageReference>
+    <PackageReference Include="Solid.Practices.IoC">
+      <Version>1.2.1-rc7</Version>
     </PackageReference>
     <PackageReference Include="Solid.Practices.Modularity">
-      <Version>1.2.1-rc4</Version>
+      <Version>1.2.1-rc5</Version>
     </PackageReference>
     <PackageReference Include="xunit.abstractions">
       <Version>2.0.3</Version>
