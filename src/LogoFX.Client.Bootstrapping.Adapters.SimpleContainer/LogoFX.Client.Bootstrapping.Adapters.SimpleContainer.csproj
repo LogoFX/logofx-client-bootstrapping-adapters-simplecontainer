@@ -1,14 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk"> 
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer</AssemblyName>
-    <RootNamespace>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer</RootNamespace>
-    <AssemblyVersion>2.0.0</AssemblyVersion>
-    <FileVersion>2.0.0</FileVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <Version>2.0.0</Version>
   </PropertyGroup>
@@ -16,6 +9,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\Bin\netstandard2.0\Release</OutputPath>
     <DocumentationFile>..\Bin\netstandard2.0\Release\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>  
 
   <ItemGroup>
