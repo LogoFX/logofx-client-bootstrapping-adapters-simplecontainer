@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <IsPackable>false</IsPackable>
     <AssemblyName>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.Tests</AssemblyName>
     <RootNamespace>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.Tests</RootNamespace>
