@@ -16,7 +16,7 @@
     <dependencies>
       <dependency id="Solid.Practices.IoC" version="2.3.0-rc1" />
       <dependency id="LogoFX.Client.Bootstrapping.Adapters.Contracts" version="2.2.0-rc2" />
-      <dependency id="LogoFX.Practices.IoC" version="2.3.0-rc1" />
+      <dependency id="LogoFX.Practices.IoC" version="2.2.0-rc2" />
     </dependencies>
-  </metadata> 
+  </metadata>
 </package>

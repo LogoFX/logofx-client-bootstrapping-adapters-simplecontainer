@@ -1,16 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <IsPackable>false</IsPackable>
     <AssemblyName>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.Tests</AssemblyName>
     <RootNamespace>LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.Tests</RootNamespace>
   </PropertyGroup>
-
   <PropertyGroup>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="5.10.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
@@ -20,9 +17,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer\LogoFX.Client.Bootstrapping.Adapters.SimpleContainer.csproj" />
   </ItemGroup>
-
 </Project>
