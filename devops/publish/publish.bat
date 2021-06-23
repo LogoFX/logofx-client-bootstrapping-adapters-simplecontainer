@@ -1,5 +1,5 @@
 SET package_name=LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
-SET package_version=2.2.0-rc2
+SET package_version=2.2.0-rc3
 cd ../build
 call build.bat
 cd ../pack
