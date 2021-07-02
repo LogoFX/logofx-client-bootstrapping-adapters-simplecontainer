@@ -20,9 +20,7 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
         /// </summary>
         public ExtendedSimpleContainerAdapter()
             :this(new ExtendedSimpleContainer())
-        {
-            
-        }
+        {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtendedSimpleContainerAdapter"/> class.

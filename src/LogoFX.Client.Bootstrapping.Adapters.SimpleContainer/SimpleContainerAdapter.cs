@@ -19,9 +19,7 @@ namespace LogoFX.Client.Bootstrapping.Adapters.SimpleContainer
         /// </summary>
         public SimpleContainerAdapter()
             :this(new Practices.IoC.SimpleContainer())
-        {
-            
-        }
+        {}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SimpleContainerAdapter"/> class.
